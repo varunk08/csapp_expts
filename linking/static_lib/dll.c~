@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <dlfcn.h>
+
+int x[2] = {1,2};
+int y[2] = {3,4};
+
+int z[2];
+
+int main()
+{
+
+  void* pHandle;
+  void (*addvec)(int*, int*, int* int);
+  char* pError;
+
+  // Dynamically load the shared library containing addvec()
+  pHandle = dlopen("./libvector.so", RTLD_LAZY);
+  
+  if (phandle == NULL)
+    {
+      fprintf(stderr, "%s\n", dlerror());
+      exit(1);
+    }
+
+  //Get a pointer to the addvec() function we just loaded
+  if ((pError = dlerror()) != NULL)
+    {
+      fprintnf(stderror, "%s\n", pError);
+      exit(1);
+    }
+
+  // Now we can call addvec() just like any other function
+  addvec(x,y,z,2);
+  printf("z = [%d, %d]\n", z[0],z[1]);
+
+  // Unload the shared library
+  if (dlclose(pHandle) < 0)
+    {
+      printf(stderr, "%s\n", dlerror());
+      exit(1);
+    }
+
+  return 0;
+
+}
