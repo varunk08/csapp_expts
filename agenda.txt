@@ -1,0 +1,5 @@
+Workout examples in
+
+6. The memory Hierarchy
+11. Network programming
+12. Concurrent programming

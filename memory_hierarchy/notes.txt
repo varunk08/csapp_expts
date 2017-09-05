@@ -1,0 +1,4 @@
+This contains notes for the chapter "6. The memory hierarchy".
+
+The cmake file should build one visual studio solution file with all the experiment sub-folders as separate projects added to the solution.
+
