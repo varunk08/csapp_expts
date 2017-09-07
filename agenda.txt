@@ -1,5 +1,7 @@
 Workout examples in
 
 6. The memory Hierarchy
+7. Linking
+8. Exceptions
 11. Network programming
 12. Concurrent programming
